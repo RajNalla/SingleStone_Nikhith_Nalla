@@ -1,0 +1,42 @@
+{
+  "name": "singlestone_nikhith_nalla",
+  "version": "1.0.0",
+  "description": "Single Stone Interview",
+  "main": "server.ts",
+  "scripts": {
+    "start:server": "node ./dist/server.js",
+    "start": "npx ts-node ./app/server.ts",
+    "build": "npx tsc",
+    "code-coverage": "nyc --reporter=html && npm run test",
+    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+    "show-coverage-win": "start output/coverage/jest/lcov-report/index.html"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml",
+    "usePathForSuiteName": "true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^25.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lokijs": "^1.5.8",
+    "morgan": "^1.10.0",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4",
+    "jest": "^25.5.2"
+  }
+}
